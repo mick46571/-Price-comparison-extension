@@ -1,0 +1,10 @@
+function fetchPriceData(url) {
+  return fetch(url)
+    .then(response => response.text())
+    .then(data => {
+      // Use a regular expression or a library like cheerio to parse the HTML and extract the price data
+      let price = extractPrice(data);
+      return price;
+    })
+    .catch(error => console.error(error));
+}
